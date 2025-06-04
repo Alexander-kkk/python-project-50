@@ -1,5 +1,9 @@
+from gendiff.cli import parse_args
+
+
 def main():
-    print("Hello from python-project-50!")
+    args = parse_args()
+    print(args)
 
 
 if __name__ == "__main__":
