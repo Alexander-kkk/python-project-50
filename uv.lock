@@ -48,11 +48,7 @@ version = "0.1.0"
 source = { editable = "." }
 
 [package.optional-dependencies]
-<<<<<<< HEAD
 test = [
-=======
-dev = [
->>>>>>> ef5a1d774346749e1de651d98e0e34aba0e6bbc4
     { name = "pytest" },
     { name = "pytest-cov" },
     { name = "ruff" },
