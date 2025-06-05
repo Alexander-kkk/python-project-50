@@ -48,7 +48,11 @@ version = "0.1.0"
 source = { editable = "." }
 
 [package.optional-dependencies]
+<<<<<<< HEAD
 test = [
+=======
+dev = [
+>>>>>>> ef5a1d774346749e1de651d98e0e34aba0e6bbc4
     { name = "pytest" },
     { name = "pytest-cov" },
     { name = "ruff" },
@@ -56,11 +60,19 @@ test = [
 
 [package.metadata]
 requires-dist = [
+<<<<<<< HEAD
     { name = "pytest", marker = "extra == 'test'", specifier = ">=7.0" },
     { name = "pytest-cov", marker = "extra == 'test'", specifier = ">=4.0" },
     { name = "ruff", marker = "extra == 'test'", specifier = ">=0.3.0" },
 ]
 provides-extras = ["test"]
+=======
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.4.0" },
+    { name = "pytest-cov", marker = "extra == 'dev'", specifier = ">=4.0.0" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.11.12" },
+]
+provides-extras = ["dev"]
+>>>>>>> ef5a1d774346749e1de651d98e0e34aba0e6bbc4
 
 [[package]]
 name = "iniconfig"
