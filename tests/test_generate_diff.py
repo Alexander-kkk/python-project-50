@@ -11,7 +11,10 @@ def read_file(path):
 
 
 @pytest.mark.parametrize("file1,file2", [
-    ('file1.json', 'file2.json')   
+    ('file1.json', 'file2.json'), 
+    ('file1.yml', 'file2.yml'), 
+    ('file1.json', 'file2.yml'), 
+    ('file1.yml', 'file2.json')    
 ])
 def test_flat_files(file1, file2):
     dir_path = os.path.dirname(os.path.realpath(__file__))
