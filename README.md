@@ -8,3 +8,8 @@
 Сравнение плоских файлов (JSON):
 
  https://asciinema.org/a/Zh8tzmitucE9bbF5xvctthaNs
+
+
+ Сравнение плоских файлов (YML):
+
+ https://asciinema.org/a/NySNAsXbYiCp1i7zvnDGV1A23
