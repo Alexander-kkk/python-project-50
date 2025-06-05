@@ -8,6 +8,7 @@ test:
 	uv run pytest
 
 test-coverage:
+	uv pip install pytest-cov
 	uv run pytest --cov=gendiff --cov-report=xml
 
 lint:
