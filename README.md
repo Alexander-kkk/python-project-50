@@ -10,6 +10,10 @@
  https://asciinema.org/a/Zh8tzmitucE9bbF5xvctthaNs
 
 
- Сравнение плоских файлов (YML):
+Сравнение плоских файлов (YML):
 
  https://asciinema.org/a/NySNAsXbYiCp1i7zvnDGV1A23
+
+Рекурсивное сравнение:
+
+https://asciinema.org/a/86q0JdwtNa1IdmqJmwLL9OMIr
