@@ -10,19 +10,23 @@ def read_file(path):
         return f.read().strip()
 
 
-@pytest.mark.parametrize("file1,file2", [
-    ('file1.json', 'file2.json'), 
-    ('file1.yml', 'file2.yml'), 
-    ('file1.json', 'file2.yml'), 
-    ('file1.yml', 'file2.json')    
+@pytest.mark.parametrize("file1,file2,format_name,expected_file", [
+    ('file1.json', 'file2.json', 'stylish', 'expected_stylish.txt'),
+    ('file1.yml', 'file2.yml', 'stylish', 'expected_stylish.txt'),
+    ('file1.json', 'file2.yml', 'stylish', 'expected_stylish.txt'),
+    ('file1.yml', 'file2.json', 'stylish', 'expected_stylish.txt'),
+    ('file1.json', 'file2.json', 'plain', 'expected_plain.txt'),
+    ('file1.yml', 'file2.yml', 'plain', 'expected_plain.txt'),
+    ('file1.json', 'file2.yml', 'plain', 'expected_plain.txt'),
+    ('file1.yml', 'file2.json', 'plain', 'expected_plain.txt')
 ])
-def test_flat_files(file1, file2):
+def test_formats_with_various_files(file1, file2, format_name, expected_file):
     dir_path = os.path.dirname(os.path.realpath(__file__))
     test_data = os.path.join(dir_path, 'test_data')
     
     file1_path = os.path.join(test_data, file1)
     file2_path = os.path.join(test_data, file2)
-    expected_path = os.path.join(test_data, 'expected_result.txt')
+    expected_path = os.path.join(test_data, expected_file)
     
-    result = generate_diff(file1_path, file2_path)
+    result = generate_diff(file1_path, file2_path, format_name)
     assert result == read_file(expected_path)
