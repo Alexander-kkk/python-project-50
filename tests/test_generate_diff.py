@@ -1,3 +1,4 @@
+import json
 import os
 
 import pytest
@@ -18,7 +19,11 @@ def read_file(path):
     ('file1.json', 'file2.json', 'plain', 'expected_plain.txt'),
     ('file1.yml', 'file2.yml', 'plain', 'expected_plain.txt'),
     ('file1.json', 'file2.yml', 'plain', 'expected_plain.txt'),
-    ('file1.yml', 'file2.json', 'plain', 'expected_plain.txt')
+    ('file1.yml', 'file2.json', 'plain', 'expected_plain.txt'),
+    ('file1.json', 'file2.json', 'json', 'expected_json.txt'),
+    ('file1.yml', 'file2.yml', 'json', 'expected_json.txt'),
+    ('file1.json', 'file2.yml', 'json', 'expected_json.txt'),
+    ('file1.yml', 'file2.json', 'json', 'expected_json.txt'),
 ])
 def test_formats_with_various_files(file1, file2, format_name, expected_file):
     dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -29,4 +34,9 @@ def test_formats_with_various_files(file1, file2, format_name, expected_file):
     expected_path = os.path.join(test_data, expected_file)
     
     result = generate_diff(file1_path, file2_path, format_name)
-    assert result == read_file(expected_path)
+    expected = read_file(expected_path)
+    
+    if format_name == 'json':
+        assert json.loads(result) == json.loads(expected)
+    else:
+        assert result.strip() == expected.strip()
