@@ -12,15 +12,18 @@ def format_plain(diff, parent_key=''):
                 lines.append(nested_lines)
         elif type_ == 'added':
             value = format_value(node['new_value'])
-            lines.append(f"Property '{full_path}' was added with value: {value}")
+            message = f"Property '{full_path}' was added with value: {value}"
+            lines.append(message)
         elif type_ == 'removed':
             lines.append(f"Property '{full_path}' was removed")
         elif type_ == 'changed':
             old_value = format_value(node['old_value'])
             new_value = format_value(node['new_value'])
-            lines.append(
-                f"Property '{full_path}' was updated. From {old_value} to {new_value}"
+            message = (
+                f"Property '{full_path}' was updated. "
+                f"From {old_value} to {new_value}"
             )
+            lines.append(message)
     
     return '\n'.join(lines)
 
