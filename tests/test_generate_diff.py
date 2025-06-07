@@ -25,7 +25,7 @@ def read_file(path):
     ('file1.json', 'file2.yml', 'json', 'expected_json.txt'),
     ('file1.yml', 'file2.json', 'json', 'expected_json.txt'),
 ])
-def test_formats_with_various_files(file1, file2, format_name, expected_file):
+def test_generate_diff(file1, file2, format_name, expected_file):
     dir_path = os.path.dirname(os.path.realpath(__file__))
     test_data = os.path.join(dir_path, 'test_data')
     
