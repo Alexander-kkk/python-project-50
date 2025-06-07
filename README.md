@@ -14,10 +14,14 @@
 
  https://asciinema.org/a/NySNAsXbYiCp1i7zvnDGV1A23
 
-Рекурсивное сравнение:
+Formatter stylish:
 
 https://asciinema.org/a/86q0JdwtNa1IdmqJmwLL9OMIr
 
-Плоский формат(plain):
+Formatter plain:
 
-  https://asciinema.org/a/im2G7LHKjrgju09nMvFHXwQds
+https://asciinema.org/a/im2G7LHKjrgju09nMvFHXwQds
+
+Formatter JSON:
+
+https://asciinema.org/a/JTWoCRUnaOpJhC7PUPppG57Ac
